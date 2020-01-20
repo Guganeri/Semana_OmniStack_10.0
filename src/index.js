@@ -1,25 +1,24 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const routes = require('./routes')
 
 const app = express();
 
-mongoose.connect('');
 
-// Entender que todos os formatos dos metodos http são em formato json. Poderia ser para algo mais espefico
-// Como Get, Post Etc
+//tirar//
+mongoose.connect('', {    
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+
 app.use(express.json());
+app.use(routes);
 
-// Métodos HTTP: GET, POST, PUT, DELETE
+
+app.listen(3333);
+
 
 //Tipos de parâmetros: 
 //Query Params: req.query (Filtros, Ordenação , Paginação)
 //Route Params: request.params (Identificar um recurso na alteração ou remoção)
 //Body: request.body (Dados para criação ou alteração de um registro)
-
-app.post('/users', (request, response) => {
-    console.log(request.body);
-    return response.json({message:'Hello OmniStack !!'});
-});
-
-
-app.listen(3333);
