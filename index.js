@@ -1,6 +1,9 @@
 const express = require('express');
+const mongoose = require('mongoose');
 
 const app = express();
+
+mongoose.connect('');
 
 // Entender que todos os formatos dos metodos http são em formato json. Poderia ser para algo mais espefico
 // Como Get, Post Etc

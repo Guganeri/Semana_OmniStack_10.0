@@ -1,0 +1,2 @@
+- Bibliotaca do Mongo para comunicar com a base do mongo atlas
+yarn add mongoose
