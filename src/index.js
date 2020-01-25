@@ -6,7 +6,7 @@ const app = express();
 
 
 //tirar//
-mongoose.connect(', {    
+mongoose.connect('', {    
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });

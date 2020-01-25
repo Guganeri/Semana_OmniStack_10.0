@@ -1,11 +1,19 @@
 const Dev = require('../models/Dev');
+const parseStringAsArray = require('../utils/parseStringAsArray');
 
 module.exports = {
-    async indexe(request, response)    {
-        console.log(request.query);
-        // Buscar todos os devs num raio 10km
-        // Filtrar por tecnologias
-        return response.json({devs: [] });
+    async index(request, response)    {
+        const {latitude, longitude, techs} = request.query;
+        
+        const techsArray = parseStringAsArray(techs);
+
+        const devs = await Dev.find({
+            techs: {
+                $in:techsArray,
+            },
+        });
+
+        return response.json({devs});
 
     }
 }
