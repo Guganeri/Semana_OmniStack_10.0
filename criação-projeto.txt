@@ -1,1 +1,4 @@
+- Criando com Yarn
 yarn create react-app web
+- Criando com npm
+npx create-react-app web
