@@ -1,4 +1,12 @@
+yarn dev
+yar start
+
+yarn add mongose
+yarn add axios
+
 - Criando com Yarn
 yarn create react-app web
 - Criando com npm
 npx create-react-app web
+- Remover bloqueio de acessos externos
+yarn add cors
